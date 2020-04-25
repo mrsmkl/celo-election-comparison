@@ -1,0 +1,17 @@
+{
+  "name": "celo-web3-stub",
+  "version": "1.0.0",
+  "description": "Celo Web3 stub application using Contractkit",
+  "main": "index.js",
+  "author": "Sami Mäkelä",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@celo/contractkit": "0.4.1",
+    "ts-node": "^8.5.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "tsc -b ."
+  },
+  "private": true
+}
