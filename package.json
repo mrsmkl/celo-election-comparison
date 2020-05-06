@@ -5,17 +5,23 @@
   "main": "lib/compare.js",
   "author": "Sami Mäkelä",
   "license": "Apache-2.0",
-  "repo": "https://github.com/mrsmkl/celo-election-comparison",
+  "repository": "https://github.com/mrsmkl/celo-election-comparison",
   "bin": {
-    "celo-election-comparison": "bin/run.js"
+    "celo-election-comparison": "bin/run.js",
+    "celo-signed-blocks": "bin/signed.js"
   },
   "dependencies": {
     "@celo/contractkit": "0.4.4",
+    "@types/command-line-args": "^5.0.0",
+    "@types/command-line-usage": "^5.0.1",
+    "await-sleep": "0.0.1",
     "bignumber.js": "^9.0.0",
     "chalk": "^2.4.2",
     "cli-ux": "^5.3.1",
-    "web3": "1.2.4",
-    "ts-node": "^8.5.4"
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.1.0",
+    "ts-node": "^8.5.4",
+    "web3": "1.2.4"
   },
   "devDependencies": {},
   "scripts": {
