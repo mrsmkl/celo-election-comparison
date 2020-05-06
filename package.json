@@ -6,7 +6,7 @@
   "author": "Sami Mäkelä",
   "license": "Apache-2.0",
   "bin": {
-    "celo-election-compare": "bin/run.js"
+    "celo-election-comparison": "bin/run.js"
   },
   "dependencies": {
     "@celo/contractkit": "0.4.4",
