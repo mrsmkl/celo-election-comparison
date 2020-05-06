@@ -2,7 +2,7 @@
   "name": "celo-election-comparison",
   "version": "0.0.1",
   "description": "Show information about Celo validator election",
-  "main": "src/compare.js",
+  "main": "lib/compare.js",
   "author": "Sami Mäkelä",
   "license": "Apache-2.0",
   "dependencies": {
@@ -10,10 +10,12 @@
     "bignumber.js": "^9.0.0",
     "chalk": "^2.4.2",
     "cli-ux": "^5.3.1",
+    "web3": "1.2.4",
     "ts-node": "^8.5.4"
   },
   "devDependencies": {},
   "scripts": {
+    "patch-release": "npm run build && npm version patch && npm publish && git push --follow-tags",
     "build": "tsc -b ."
   }
 }
