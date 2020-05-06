@@ -1,2 +1,3 @@
-# celo-web3-stub
-Celo Web3 stub application using Contractkit
+# celo-election-comparison
+
+Prints the current status of validator elections in sorted order.
