@@ -18,10 +18,11 @@ async function main() {
 
   const accounts = await kit.contracts.getAccounts();
   const election = await kit.contracts.getElection();
+  const election_ = await kit._web3Contracts.getElection();
   const validators = await kit.contracts.getValidators();
 
   const thresholdRatio = await election.electabilityThreshold();
-  const total = await election.getTotalVotes();
+  const total = await election_.methods.getTotalVotes().call();
 
   const { max } = await election.electableValidators();
 
