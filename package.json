@@ -5,6 +5,7 @@
   "main": "lib/compare.js",
   "author": "Sami Mäkelä",
   "license": "Apache-2.0",
+  "repo": "https://github.com/mrsmkl/celo-election-comparison",
   "bin": {
     "celo-election-comparison": "bin/run.js"
   },
