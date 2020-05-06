@@ -1,17 +1,19 @@
 {
-  "name": "celo-web3-stub",
-  "version": "1.0.0",
-  "description": "Celo Web3 stub application using Contractkit",
-  "main": "index.js",
+  "name": "celo-election-comparison",
+  "version": "0.0.1",
+  "description": "Show information about Celo validator election",
+  "main": "src/compare.js",
   "author": "Sami Mäkelä",
   "license": "Apache-2.0",
   "dependencies": {
-    "@celo/contractkit": "0.4.1",
+    "@celo/contractkit": "0.4.4",
+    "bignumber.js": "^9.0.0",
+    "chalk": "^2.4.2",
+    "cli-ux": "^5.3.1",
     "ts-node": "^8.5.4"
   },
   "devDependencies": {},
   "scripts": {
     "build": "tsc -b ."
-  },
-  "private": true
+  }
 }
