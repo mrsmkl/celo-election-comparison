@@ -1,6 +1,6 @@
 {
   "name": "celo-election-comparison",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Show information about Celo validator election",
   "main": "lib/compare.js",
   "author": "Sami Mäkelä",
