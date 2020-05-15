@@ -63,19 +63,22 @@ async function getEpochValidators(
   return acc;
 }
 
-function printBitmap(n: number, str: string) {
+function printBitmap(happy: string, sad: string, n: number, str: string) {
   while (str.length < n) str = "0" + str;
   let res = "";
   for (let i = 0; i < n; i++) {
-    res += str.charAt(i) === "1" ? chalk.green(".") : chalk.red("X");
+    res += str.charAt(i) === "1" ? chalk.green(happy) : chalk.red(sad);
   }
   return res;
 }
 
 async function main() {
-  const kit = newKit("http://localhost:8545");
+  const url = process.env['WEB3'] || "http://localhost:8545"
+  const kit = newKit(url);
 
   const options = [
+    { name: 'sad', type: String, description: 'Indicator for downtime. Default: X' },
+    { name: 'happy', type: String, description: 'Indicator for uptime. Default: .' },
     { name: 'startBlock', type: Number, description: 'Start block. Default: -100' },
     { name: 'endBlock', type: Number, description: 'End block. Default: 10000000000' },
     { name: 'no-addresses', type: Boolean, description: 'Do not show signer addresses' },
@@ -107,6 +110,8 @@ async function main() {
   let block = parsed.startBlock;
   let endBlock = parsed.endBlock;
   let showAddresses = !parsed['no-addresses'];
+  let happy = parsed.happy || '.'
+  let sad = parsed.sad || 'X'
 
   if (block >= 0 && endBlock) {
 
@@ -165,7 +170,7 @@ async function main() {
       downValidators += down ? 1 : 0;
     });
     if (!showAddresses) downLst = [];
-    console.log(`${epoch} ${i} ${printBitmap(validators.length, binary)} ${downValidators} down ${downLst} ${epoch !== prevEpoch ? 'EPOCH CHANGE' : ''}`);
+    console.log(`${epoch} ${i} ${printBitmap(happy, sad, validators.length, binary)} ${downValidators} down ${downLst} ${epoch !== prevEpoch ? 'EPOCH CHANGE' : ''}`);
   }
   const lst: any[] = await Promise.all(
     Object.values(stats).map(async (a: any) => ({

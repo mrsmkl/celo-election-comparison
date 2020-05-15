@@ -14,7 +14,8 @@ export const table = {
 import { newKit } from "@celo/contractkit";
 
 async function main() {
-  const kit = newKit("http://localhost:8545");
+  const url = process.env['WEB3'] || "http://localhost:8545"
+  const kit = newKit(url);
 
   const accounts = await kit.contracts.getAccounts();
   const election = await kit.contracts.getElection();
