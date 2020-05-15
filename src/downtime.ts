@@ -50,7 +50,6 @@ process.stdin.on('keypress', function (_ch, key) {
     if (exiting) process.exit(0)
     console.log("Caught interrupt signal");
     exiting = true
-    process.stdin.pause();
   }
 });
 
@@ -280,6 +279,7 @@ async function main() {
     sorted.map((a) => ({ ...a, percent: percentString(a.percent) })),
     table
   );
+  process.exit()
 }
 
 main();
